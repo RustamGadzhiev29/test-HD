@@ -1,0 +1,24 @@
+.titleContainer {
+  padding-top: 170px;
+  margin-left: 78px;
+  .title {
+    position: absolute;
+    top: 170px;
+    left: 0;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 120%;
+    width: 353px;
+    padding-left: 78px;
+  }
+  .titleLine {
+    width: 3px;
+    height: 120px;
+
+    position: absolute;
+    left: 0px;
+    top: 178px;
+
+    background: linear-gradient(#3877ee, #ef5da8);
+  }
+}
