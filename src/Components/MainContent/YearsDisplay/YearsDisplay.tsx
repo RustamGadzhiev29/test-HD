@@ -1,11 +1,15 @@
 import React from "react";
+import { eventsInfoType } from "../../State/State";
 import style from "./YearesDisplay.module.scss";
 
-export const YearesDisplay = () => {
+type YearesDisplayPropsType = {
+  currentDates:eventsInfoType
+}
+export const YearesDisplay = ({currentDates}:YearesDisplayPropsType) => {
   return (
     <div className={style.yearesDisplayContainer}>
-      <span>2000</span>
-      <span>2009</span>
+      <span>{currentDates.startYear}</span>
+      <span>{currentDates.endYear}</span>
     </div>
   );
 };
