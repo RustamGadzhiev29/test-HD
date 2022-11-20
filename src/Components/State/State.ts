@@ -218,4 +218,4 @@ export const state:eventsInfoType[] = [
     },
   ];
   
-  export  const DataContex = React.createContext<eventsInfoType[]>(state)
+  export  const StateContext = React.createContext<eventsInfoType[]>(state)

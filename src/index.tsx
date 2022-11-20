@@ -3,13 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { App } from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { state, StateContext } from "./Components/State/State";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
+  
   <React.StrictMode>
+  <StateContext.Provider value={state}>
     <App />
+    </StateContext.Provider>
   </React.StrictMode>
 );
 

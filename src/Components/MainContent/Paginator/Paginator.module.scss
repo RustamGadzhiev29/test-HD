@@ -1,9 +1,29 @@
+@import '../../Common/Styles/variables.scss';
+@import '../../Common/Styles/mixins.scss';
+
+
 .swiperContainer {
   position: absolute;
   bottom: 5%;
   width: 100%;
-  
-  .swiper {
-    
+  cursor: grab;
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+
+  .yearText { 
+    @include text ( $yearesColor, $yearesFontTitle, 25px, 400);
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+
+.discription {
+    @include text($textColor, $discriptionFontTitle, 1.25rem, 400);
+    line-height: 120%;
+    text-align: left;
+    margin-bottom: 15px;
+    @media (max-width: 1440px) {
+      font-size: 1rem;
+  }
 }
 }

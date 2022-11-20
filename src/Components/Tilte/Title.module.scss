@@ -1,7 +1,24 @@
+@import '../Common/Styles/mixins.scss';
+@import '../Common/Styles/variables.scss';
+
 .titleContainer {
   padding-top: 170px;
   margin-left: 78px;
+
+  }
+
   .title {
+    @include text($textColor, $yearesFontTitle, 2.8rem, 700) ;
+    @media (max-width: 1440px) {
+      font-size: 2.5rem;
+      line-height: 120%;
+      padding-left: 10%;
+    }
+    
+    @media (max-width: 400px) {
+      font-size: 1rem;
+      line-height: 120%;
+    }
     position: absolute;
     top: 170px;
     left: 0;
@@ -11,14 +28,15 @@
     width: 353px;
     padding-left: 78px;
   }
+  
   .titleLine {
     width: 3px;
     height: 120px;
-
     position: absolute;
     left: 0px;
     top: 178px;
-
-    background: linear-gradient(#3877ee, #ef5da8);
+    background: linear-gradient($yearesColor, $secondYeareColor);
+    @media (max-width: 1440px){
+      height: 6%;
+    }
   }
-}

@@ -1,4 +1,7 @@
+@import "../../Common//Styles//variables.scss";
+
 .yearesDisplayContainer {
+  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -7,11 +10,31 @@
   font-size: 200px;
   font-weight: 700;
   line-height: 160px;
-  color: #5d5fef;
+  color: $firstYeareColor;
   white-space: nowrap;
 
   span:nth-child(2) {
-    color: #ee5da7;
+    color: $secondYeareColor;
     padding-left: 80px;
+    
+  }
+
+  @media (max-width: 1448px) {
+    font-size: 9rem;
+  }
+  @media (max-width: 1190px) {
+    font-size: 6rem;
+    line-height: 100%;
+  }
+  
+  @media (max-width: 950px) {
+    font-size: 4rem;
+    span:nth-child(2) {
+      padding-left: 2%;
+    }
+  }
+  @media (max-width: 768px) {
+    font-size: 2.8rem;
+    line-height: 72px;
   }
 }

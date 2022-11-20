@@ -1,9 +1,13 @@
-.app {
-  height: 100vh;
-  margin: 0 auto;
-  border: 1px, solid;
-  background-color: rgb(213, 210, 210);
-}
+@import "./Components/Common/Styles/variables.scss";
+body {
+  background: $backgroundColor;
+  margin: 0;
 
+  .app {
+    height: 100vh;
+    margin: 0 auto;
+    border: 1px solid rgba(66, 86, 122, 0.1);
+  }
+}
 
 

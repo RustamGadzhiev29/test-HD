@@ -1,0 +1,165 @@
+@use 'sass:math';
+@import '../../Common/Styles/variables.scss';
+
+.circle {
+  $half-item: math.div(56px, 2);
+  $half-parent: math.div(530px, 2);
+  position: relative;
+  width: 530px;
+  height: 530px;
+  padding: 0;
+  // border-radius: 50%;
+  list-style: none;
+  box-sizing: content-box;
+  @media (max-width: 1200px) {
+    display: none;
+  }
+  > * {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 56px;
+    height: 56px;
+    margin: -$half-item;
+  }
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 2s linear forwards;
+  margin: 0;
+  border: 1px solid rgba(66, 86, 122, 0.2);
+  border-radius: 50%;
+  width: 530px;
+  height: 530px;
+  padding: 0;
+
+  &__element {
+    &:nth-of-type(1) {
+      animation: spin1 2s linear forwards;
+    }
+    &:nth-of-type(2) {
+      animation: spin2 2s linear forwards;
+    }
+    &:nth-of-type(3) {
+      animation: spin3 2s linear forwards;
+    }
+    &:nth-of-type(4) {
+      animation: spin4 2s linear forwards;
+    }
+
+    &:nth-of-type(5) {
+      animation: spin5 2s linear forwards;
+    }
+
+    &:nth-of-type(6) {
+      animation: spin6 2s linear forwards;
+    }
+
+      .pointTitle {
+        position: absolute;
+        top: 22%;
+        left: 76px;
+        font-weight: 700;
+      }
+
+      .passive {
+        min-height: 6px;
+        min-width: 6px;
+        height: 6px;
+        width: 6px;
+        border: 1px solid $textColor;
+        background: $textColor;
+        border-radius: 50%;
+        margin: 25px;
+
+        div {
+          font-size: 0;
+        }
+
+        &:hover div {
+          font-size: 1rem;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+
+      .active, .passive:hover {
+        display: flex;
+        position: relative;
+        min-width: 56px;
+        min-height: 56px;
+        width: 56px;
+        height: 56px;
+        border: 1px solid $textColor;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin: 0;
+        background: $backgroundColor;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(300deg);
+    }
+  }
+  @keyframes spin1 {
+    0% {
+      transform: translate(265px) rotate(0);
+    }
+    100% {
+      transform: translate(265px) rotate(-300deg);
+    }
+  }
+
+  @keyframes spin2 {
+    0% {
+      transform: rotate(60deg) translate(265px) rotate(300deg);
+    }
+    100% {
+      transform: rotate(60deg) translate(265px) rotate(0deg);
+    }
+  }
+
+  @keyframes spin3 {
+    0% {
+      transform: rotate(120deg) translate(265px) rotate(240deg);
+    }
+    100% {
+      transform: rotate(120deg) translate(265px) rotate(-60deg);
+    }
+  }
+
+  @keyframes spin4 {
+    0% {
+      transform: rotate(180deg) translate(265px) rotate(180deg);
+    }
+    100% {
+      transform: rotate(180deg) translate(265px) rotate(-120deg);
+    }
+  }
+
+  @keyframes spin5 {
+    0% {
+      transform: rotate(240deg) translate(265px) rotate(120deg);
+    }
+    100% {
+      transform: rotate(240deg) translate(265px) rotate(-180deg);
+    }
+  }
+
+  @keyframes spin6 {
+    0% {
+      transform: rotate(300deg) translate(265px) rotate(60deg);
+    }
+    100% {
+      transform: rotate(300deg) translate(265px) rotate(-240deg);
+    }
+}

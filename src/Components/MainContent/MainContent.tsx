@@ -4,19 +4,13 @@ import { Title } from "../Tilte/Title";
 import { YearesDisplay } from "./YearsDisplay/YearsDisplay";
 import { Paginator } from "./Paginator/Paginator";
 import { Buttons } from "../Buttons/Buttons";
-import { DataContex, eventsInfoType } from "../State/State";
-
-// const [year, setYear] = useState()
-// const [prevYear, setPrevYear] = useState()
-
-// const onChangeEventHandler = () => {
-
-// }
+import { StateContext, eventsInfoType } from "../State/State";
+import { Circle } from "./Circle/Circle";
 
 export const MainContent = () => {
   
-  const data = useContext(DataContex);
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const data = useContext(StateContext);
+  const [currentPage, setCurrentPage] = useState<number>(0);
   const [currentDates, setCurrentDates] = useState<eventsInfoType>(data[0]);
 
   useEffect(() => {
@@ -33,7 +27,7 @@ export const MainContent = () => {
       <div className={styles.block}></div>
       <div className={styles.block}></div>
       <div className={styles.block}></div>
-      <ul className={styles.centralBlock}></ul>
+      <Circle changeDates={setCurrentPage} currentPage={currentPage} />
       <Buttons changeDates={setCurrentPage} currentPage={currentPage} />
       <Paginator data={data} currentPage={currentPage}/>
     </div>

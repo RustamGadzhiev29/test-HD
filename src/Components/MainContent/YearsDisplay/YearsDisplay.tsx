@@ -1,15 +1,42 @@
-import React from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { eventsInfoType } from "../../State/State";
 import style from "./YearesDisplay.module.scss";
+import gsap from 'gsap';
 
 type YearesDisplayPropsType = {
   currentDates:eventsInfoType
 }
 export const YearesDisplay = ({currentDates}:YearesDisplayPropsType) => {
+
+  const startYear = useRef(null)
+  const endYear = useRef(null)
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(startYear.current, {
+        duration: 0.5,
+        textContent: `${currentDates.startYear}`,
+        roundProps: 'textContent',
+      });
+    }, startYear);
+    return () => ctx.revert();
+  }, [currentDates.startYear]);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(endYear.current, {
+        duration: 0.5,
+        textContent: `${currentDates.endYear}`,
+        roundProps: 'textContent',
+      });
+    }, endYear);
+    return () => ctx.revert();
+  }, [currentDates.endYear]);
+  
   return (
     <div className={style.yearesDisplayContainer}>
-      <span>{currentDates.startYear}</span>
-      <span>{currentDates.endYear}</span>
+      <span ref={startYear}></span>
+      <span ref={endYear}></span>
     </div>
   );
 };
