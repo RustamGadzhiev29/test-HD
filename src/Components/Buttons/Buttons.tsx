@@ -8,12 +8,7 @@ type ButtonsPropsType = {
   currentPage: number;
 };
 
-export const Buttons = ({
-  changeDates,
-  currentPage,
-  ...props
-}: ButtonsPropsType) => {
-
+export const Buttons = ({ changeDates, currentPage }: ButtonsPropsType) => {
   const onClickNext = () => {
     return changeDates(currentPage + 1);
   };
@@ -26,12 +21,19 @@ export const Buttons = ({
       <div className={styles.counterDisplay}>
         0{currentPage + 1}/0{6}
       </div>
-
-      <button disabled={currentPage + 1 === 1} onClick={onClickPrev}>
-        <img src={left} />
+      <button
+        type="button"
+        disabled={currentPage + 1 === 1}
+        onClick={onClickPrev}
+      >
+        <img src={left} alt="" />
       </button>
-      <button disabled={currentPage + 1 === 6} onClick={onClickNext}>
-        <img src={right} />
+      <button
+        type="button"
+        disabled={currentPage + 1 === 6}
+        onClick={onClickNext}
+      >
+        <img src={right} alt="" />
       </button>
     </div>
   );

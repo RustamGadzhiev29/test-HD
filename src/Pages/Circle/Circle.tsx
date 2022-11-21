@@ -1,5 +1,6 @@
-import React, { useContext, useEffect, useLayoutEffect, useRef } from "react";
-import { Buttons } from "../../Components/Buttons/Buttons";
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useContext, useLayoutEffect, useRef } from "react";
 import { StateContext } from "../../State/State";
 import gsap from "gsap";
 import styles from "./Circle.module.scss";
@@ -9,11 +10,7 @@ type CirclePropsType = {
   currentPage: number;
 };
 
-export const Circle = ({
-  changeDates,
-  currentPage,
-  ...props
-}: CirclePropsType) => {
+export const Circle = ({ changeDates, currentPage }: CirclePropsType) => {
   const data = useContext(StateContext);
 
   const tl = useRef(null);
@@ -29,7 +26,7 @@ export const Circle = ({
   }, [currentPage]);
 
   return (
-    <div className={styles.circle} >
+    <div className={styles.circle}>
       {data.map((d, index) => (
         <li
           onClick={() => changeDates(index)}
@@ -37,7 +34,11 @@ export const Circle = ({
           className={styles.circle__element}
           ref={tl}
         >
-          <div className={`${index === currentPage ? styles.active : styles.passive}`}>
+          <div
+            className={`${
+              index === currentPage ? styles.active : styles.passive
+            }`}
+          >
             <div>{index + 1}</div>
           </div>
           {index === currentPage && (

@@ -1,25 +1,21 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable import/no-unresolved */
 import React, { useLayoutEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./Paginator.module.scss";
-import "swiper/css";
-import "swiper/css/pagination";
 import { eventsInfoType } from "../../State/State";
-import gsap from "gsap";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
+import gsap from "gsap";
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 
-type paginatorPropsType = {
+type PaginatorPropsType = {
   data: eventsInfoType[];
   currentPage: number;
-  // title: string
-  // device: boolean
 };
 
-export const Paginator = (props: paginatorPropsType) => {
-  const currentPeriod = props.data[props.currentPage];
+export const Paginator = ({ data, currentPage }: PaginatorPropsType) => {
+  const currentPeriod = data[currentPage];
 
   const swiperRef = useRef(null);
 
@@ -48,10 +44,9 @@ export const Paginator = (props: paginatorPropsType) => {
         slidesPerView={3.5}
         centeredSlides={false}
         spaceBetween={30}
-        navigation={true}
-        id={'always-be-swipin'}
+        navigation
+        id="always-be-swipin"
       >
-        
         {currentPeriod.events.map((element) => {
           return (
             <SwiperSlide key={element.id}>
