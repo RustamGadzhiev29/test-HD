@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./App.module.scss";
-import { MainContent } from "./Components/MainContent/MainContent";
-import { Paginator } from "./Components/MainContent/Paginator/Paginator";
+import { MainContent } from "./Pages/MainContent/MainContent";
+import { Paginator } from "./Components/Paginator/Paginator";
 
 export const App = () => {
   return (

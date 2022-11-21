@@ -6,7 +6,7 @@ import gsap from 'gsap';
 type YearesDisplayPropsType = {
   currentDates:eventsInfoType
 }
-export const YearesDisplay = ({currentDates}:YearesDisplayPropsType) => {
+export const DisplayYears = ({currentDates}:YearesDisplayPropsType) => {
 
   const startYear = useRef(null)
   const endYear = useRef(null)

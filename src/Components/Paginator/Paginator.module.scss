@@ -1,5 +1,6 @@
-@import '../../Common/Styles/variables.scss';
-@import '../../Common/Styles/mixins.scss';
+
+@import '@mixins/mixins.scss';
+@import '@variables/variables.scss';
 
 
 .swiperContainer {

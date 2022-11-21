@@ -1,16 +1,15 @@
-import React, { useLayoutEffect, useState, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./Paginator.module.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import { eventsInfoType } from "../../State/State";
-import { Pagination, Navigation, Scrollbar, A11y } from "swiper";
-import { deflateSync } from "zlib";
 import gsap from "gsap";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
 
 type paginatorPropsType = {
   data: eventsInfoType[];
@@ -22,12 +21,12 @@ type paginatorPropsType = {
 export const Paginator = (props: paginatorPropsType) => {
   const currentPeriod = props.data[props.currentPage];
 
-  const swiper = useRef(null);
+  const swiperRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        swiper.current,
+        swiperRef.current,
         {
           rotation: 360,
           opacity: 0,
@@ -43,15 +42,16 @@ export const Paginator = (props: paginatorPropsType) => {
   }, [currentPeriod]);
 
   return (
-    <div className={styles.swiperContainer} ref={swiper}>
+    <div className={styles.swiperContainer} ref={swiperRef}>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
-
         slidesPerView={3.5}
         centeredSlides={false}
         spaceBetween={30}
         navigation={true}
+        id={'always-be-swipin'}
       >
+        
         {currentPeriod.events.map((element) => {
           return (
             <SwiperSlide key={element.id}>

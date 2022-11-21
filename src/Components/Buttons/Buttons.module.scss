@@ -1,5 +1,5 @@
-@import "./../Common/Styles/variables.scss";
-@import "./../Common/Styles/mixins.scss";
+@import "@variables/variables.scss";
+@import "@mixins/mixins.scss";
 
 .buttonsContainer {
   position: absolute;

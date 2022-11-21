@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useLayoutEffect, useRef } from "react";
-import { Buttons } from "../../Buttons/Buttons";
+import { Buttons } from "../../Components/Buttons/Buttons";
 import { StateContext } from "../../State/State";
 import gsap from "gsap";
 import styles from "./Circle.module.scss";

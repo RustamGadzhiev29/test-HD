@@ -1,5 +1,5 @@
 @use 'sass:math';
-@import '../../Common/Styles/variables.scss';
+@import '@variables/variables.scss';
 
 .circle {
   $half-item: math.div(56px, 2);

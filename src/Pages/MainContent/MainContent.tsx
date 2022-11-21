@@ -1,11 +1,11 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import styles from "./MainContent.module.scss";
 import { Title } from "../Tilte/Title";
-import { YearesDisplay } from "./YearsDisplay/YearsDisplay";
-import { Paginator } from "./Paginator/Paginator";
-import { Buttons } from "../Buttons/Buttons";
-import { StateContext, eventsInfoType } from "../State/State";
-import { Circle } from "./Circle/Circle";
+import { DisplayYears } from "../DisplayYears/DisplayYears";
+import { Paginator } from "../../Components/Paginator/Paginator";
+import { Buttons } from "../../Components/Buttons/Buttons";
+import { StateContext, eventsInfoType } from "../../State/State";
+import { Circle } from "../Circle/Circle";
 
 export const MainContent = () => {
   
@@ -22,7 +22,7 @@ export const MainContent = () => {
   return (
     <div className={styles.containerBlock}>
       <Title />
-      <YearesDisplay  currentDates={currentDates}/>
+      <DisplayYears  currentDates={currentDates}/>
       <div className={styles.block}></div>
       <div className={styles.block}></div>
       <div className={styles.block}></div>
